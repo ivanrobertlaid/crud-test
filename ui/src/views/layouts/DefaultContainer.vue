@@ -11,7 +11,7 @@ import DefaultFooter from '@/views/partials/Footer';
 import DefaultHeader from '@/views/partials/Header';
 
 export default {
-	componets: {
+	components: {
 		DefaultHeader,
 		DefaultFooter
 	}
