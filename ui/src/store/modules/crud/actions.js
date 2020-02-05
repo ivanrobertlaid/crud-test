@@ -1,5 +1,5 @@
 import Axios from "axios";
-import {headers} from '@/store/modules/headers'
+import {headers} from '@/store/headers'
 
 
 // const getAccounts = ({commit},payload)=>{
