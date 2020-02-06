@@ -1,8 +1,8 @@
 <template>
-	<div>
-		<DefaultHeader/>
+	<div class="d-flex justify-content-center align-items-center" style="min-height: 100vh; width: 100%;">
+		<!-- <DefaultHeader/> -->
 		<router-view></router-view>
-		<DefaultFooter/>
+		<!-- <DefaultFooter/> -->
 	</div>
 </template>
 
@@ -12,8 +12,8 @@ import DefaultHeader from '@/views/partials/Header';
 
 export default {
 	components: {
-		DefaultHeader,
-		DefaultFooter
+		// DefaultHeader,
+		// DefaultFooter
 	}
 };
 </script>
