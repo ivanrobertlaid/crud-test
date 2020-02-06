@@ -7,8 +7,8 @@
 </template>
 
 <script>
-import DefaultFooter from '@/views/partials/Footer';
-import DefaultHeader from '@/views/partials/Header';
+// import DefaultFooter from '@/views/partials/Footer';
+// import DefaultHeader from '@/views/partials/Header';
 
 export default {
 	components: {

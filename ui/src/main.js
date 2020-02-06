@@ -3,8 +3,7 @@ import App from './App.vue';
 
 import Axios from "axios";
 
-Axios.defaults.baseURL = "http://127.0.0.1:8000//api";
-
+Axios.defaults.baseURL = "http://127.0.0.1:8001/api";
 
 import { BootstrapVue } from 'bootstrap-vue';
 // import 'bootstrap/dist/css/bootstrap.css';

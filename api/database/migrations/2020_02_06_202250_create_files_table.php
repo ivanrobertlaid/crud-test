@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateCrudsTable extends Migration
+class CreateFilesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,16 +13,16 @@ class CreateCrudsTable extends Migration
      */
     public function up()
     {
-        Schema::create('crud', function (Blueprint $table) {
+        Schema::create('files', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->timestamps();
 
-            $table->string('name');
-            $table->string('zip');
-            $table->string('email');
-            $table->text('address');
+            $table->string('file_name')->nullable();
+            $table->string('directory_name')->nullable();
+
+            $table->integer('fileable_id')->nullable();
+            $table->string('fileable_type')->nullable();
             $table->text('slug');
-            $table->string('phone');
         });
     }
 
@@ -33,6 +33,6 @@ class CreateCrudsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('cruds');
+        Schema::dropIfExists('files');
     }
 }

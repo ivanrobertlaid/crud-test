@@ -2,11 +2,11 @@ import Axios from "axios";
 import {header, multipartHeader} from '@/store/headers'
 
 
-const submitMaininfo = ({commit},payload)=>{
+const submitMainInfo = ({commit},payload)=>{
 	return new Promise((resolve,reject)=>{
-		Axios.post('crud', payload, header).then(res => {
+		Axios.post('crud', payload).then(res => {
 			if(res.status == 200) { 
-				commit('setCrudId', res.data.crud_id)
+				commit('setCrudId', res.data.crud_id);
 				resolve(true)
 			}
 		}).catch(err => {
@@ -15,7 +15,7 @@ const submitMaininfo = ({commit},payload)=>{
 	})
 }
 
-const uploadFiles = ({commit},payload)=>{
+const uploadFiles = ({commit},payload) => {
 	return new Promise((resolve,reject)=>{
 		Axios.post('crud/upload-files', payload, multipartHeader).then(res => {
 			if(res.status == 200) { 
@@ -29,6 +29,6 @@ const uploadFiles = ({commit},payload)=>{
 
 
 export default {
-	submitMaininfo,
+	submitMainInfo,
 	uploadFiles
 }

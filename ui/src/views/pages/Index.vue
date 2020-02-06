@@ -7,8 +7,8 @@
 					<form>
 						<div class="pt-5 pb-4 pr-3 pl-3">
 							<b-tabs content-class="mt-3" justified v-model="tabIndex">
-								<b-tab title="Main Info" active><MainInfo/></b-tab>
-								<b-tab title="Files"><Files/></b-tab>
+								<b-tab title="Main Info" active><MainInfo ref="mainInfo"/></b-tab>
+								<b-tab title="Files"><Files ref="files"/></b-tab>
 							</b-tabs>
 							<button type="button" class="btn btn-primary w-100" @click="checkSubmit">{{ buttonText }}</button>
 						</div>
@@ -42,7 +42,12 @@ export default {
 		},
 
 		submitData() {
-
+			let data = this.$refs.mainInfo.form;
+			this.$store.dispatch('crud/submitMainInfo',{data}).then(res => {
+				if(res) {
+					return this.$refs.files.uploadFiles();
+				}
+			})
 		}
 	},
 

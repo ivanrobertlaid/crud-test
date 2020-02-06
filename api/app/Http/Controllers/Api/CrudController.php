@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\Models\Crud;
+use App\Models\File;
 use Illuminate\Http\Request;
 
 class CrudController extends Controller
@@ -35,8 +37,20 @@ class CrudController extends Controller
      */
     public function store(Request $request)
     {
-        //
-    }
+        try {
+
+            $crud = Crud::create($request->data);
+
+            return response()->json(['crud_id' =>  $crud->id], Response::HTTP_OK);
+
+        } catch (\Exception $e) {
+
+          return response()->json(['message' => $e->getMessage()], Response::HTTP_BAD_REQUEST);
+
+      }
+
+
+  }
 
     /**
      * Display the specified resource.
@@ -82,4 +96,56 @@ class CrudController extends Controller
     {
         //
     }
+
+    public function uploadFiles(Request $request) 
+    {
+
+//         try {
+
+//             $crud = Crud::findOrFail($request->crud_id);
+
+//             if($request->hasFile('file')) {
+
+//                 $request->validate([
+//                     'file' => 'required|mimes:jpeg,png,jpg',
+//                 ]);
+
+//                 $path = 'files/' . $crud->slug;
+//           /*
+//           * SEARCH FOR PO FILES
+//           */
+//           if(\File::exists($path)){
+//              \File::deleteDirectory($path);
+//          }
+//          $crud->files()->delete();
+
+//          $file = $request->file('file');
+//          $ext = $file->getClientOriginalExtension();
+
+//         // PARSE PRODUCT SLUG AND IMG EXTENSION 
+//          $file_name =  $crud->slug . "." . $ext;
+
+//          $fileInfo = new File([
+//             'file_name' => $file_name,
+//             'directory_name' => $path
+//         ]);
+//         /*
+//         */
+
+//         // SAVE FILE
+//         $crud->files()->save($fileInfo);
+
+//         $slug = File::latest()->first();
+
+//         $request->file->move($path, $slug);
+//     }
+
+//     return response()->json(true, Response::HTTP_OK);
+
+// } catch(\Exception $e) {
+
+//     return response()->json(['message' => $e->getMessage()], Response::HTTP_BAD_REQUEST);
+
+// }
+// }
 }
