@@ -1,19 +1,34 @@
 import Axios from "axios";
-import {headers} from '@/store/headers'
+import {header, multipartHeader} from '@/store/headers'
 
 
-// const getAccounts = ({commit},payload)=>{
-//     return new Promise((resolve,reject)=>{
-//         Axios.get('accounts', Config.config).then((res)=>{
-//             commit('setAccountList',res.data[0])
-//             resolve(res)
-//         }).catch((err)=>{
-//             reject(err)
-//         })
-//     })
-// }
+const submitMaininfo = ({commit},payload)=>{
+	return new Promise((resolve,reject)=>{
+		Axios.post('crud', payload, header).then(res => {
+			if(res.status == 200) { 
+				commit('setCrudId', res.data.crud_id)
+				resolve(true)
+			}
+		}).catch(err => {
+			reject(err)
+		})
+	})
+}
+
+const uploadFiles = ({commit},payload)=>{
+	return new Promise((resolve,reject)=>{
+		Axios.post('crud/upload-files', payload, multipartHeader).then(res => {
+			if(res.status == 200) { 
+				resolve(true)
+			}
+		}).catch(err => {
+			reject(err)
+		})
+	})
+}
 
 
 export default {
- 
+	submitMaininfo,
+	uploadFiles
 }

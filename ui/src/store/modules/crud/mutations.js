@@ -1,8 +1,9 @@
-// const setAccountData = (state,accountInfo)=>{
-// 	state.accountData = accountInfo
-// }
+const setCrudId = (state, payload) => {
+	state.crudId = payload;
+}
 
 
 
-export default{
+export default {
+	setCrudId
 }
