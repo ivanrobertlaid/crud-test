@@ -1,6 +1,7 @@
-// const AccountLists = state =>{
-// 	return state.accounts
-// }
+const getCrudId = state => {
+	return state.crudId;
+}
 
-export default{
+export default {
+	getCrudId
 }

@@ -1,5 +1,5 @@
 <template>
-	<div style="min-width: 300px; min-height: 200px;">
+	<div style=" min-height: 200px;">
 	<div class="form-group mb-4">
 		<label>Name</label>
 		<input type="email" class="form-control"  placeholder="">

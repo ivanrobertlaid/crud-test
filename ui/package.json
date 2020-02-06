@@ -12,6 +12,7 @@
     "bootstrap": "^4.4.1",
     "bootstrap-vue": "^2.4.0",
     "core-js": "^3.4.4",
+    "font-awesome": "^4.7.0",
     "jquery": "^3.4.1",
     "regenerator-runtime": "^0.13.3",
     "vue": "^2.6.10",
@@ -39,9 +40,7 @@
       "eslint:recommended"
     ],
     "rules": {
-      "no-console": "off",
-      "no-unused-vars": "off",
-      "no-unused-components": "off"
+      "*": "off"
     },
     "parserOptions": {
       "parser": "babel-eslint"

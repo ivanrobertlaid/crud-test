@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-  <router-view></router-view>
+    <router-view></router-view>
   </div>
 </template>
 
@@ -25,7 +25,11 @@ export default {
 </style>
 
 <style lang="scss">
-  @import '@/assets/scss/custom';
+$fa-font-path: '~font-awesome/fonts/';
+@import '~font-awesome/scss/font-awesome.scss';
+
+
+@import '@/assets/scss/custom';
 @import 'node_modules/bootstrap/scss/bootstrap';
 @import 'node_modules/bootstrap-vue/src/index.scss';
 </style>
