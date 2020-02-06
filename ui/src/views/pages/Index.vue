@@ -1,28 +1,32 @@
 <template>
 	<div class="card" style="background: #EEEEEE">
+
 		<div class="container">
 			<div class="row">
 				<div class="col-md-12">
-					<form class="pt-5 pb-4 pr-3 pl-3">
-						<div class="form-group mb-4">
-							<label>Email address</label>
-							<input type="email" class="form-control" aria-describedby="emailHelp" placeholder="Enter email">
-						</div>
-						<div class="form-group mb-5">
-							<label>Password</label>
-							<input type="password" class="form-control" placeholder="Password">
-						</div>
+					<form>
+						<div class="pt-5 pb-4 pr-3 pl-3">
+							<b-tabs content-class="mt-3" justified>
+								<b-tab title="Main Info" active><MainInfo/></b-tab>
+								<b-tab title="Files"><Files/></b-tab>
+							</b-tabs>
 						<button type="submit" class="btn btn-primary w-100">Submit</button>
+						</div>
+
 					</form>
 				</div>
 			</div>
 		</div>
+
 	</div>
 </template>
 
 <script>
-export default {
+import MainInfo from '@/components/MainInfo';
+import Files from '@/components/Files';
 
+export default {
+	components: {MainInfo, Files}
 };
 </script>
 
